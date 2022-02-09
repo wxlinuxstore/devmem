@@ -63,7 +63,7 @@ int main(int argc, char **argv) {
             fprintf(stderr, "Illegal data type '%c'.\n", access_type);
             exit(2);
     }
-    printf("Value at address 0x%x (%p): 0x%x\n", target, virt_addr, read_result); 
+    printf("Value at address 0x%lx (%p): 0x%lx\n", target, virt_addr, read_result); 
     fflush(stdout);
         //若参数大于3个，则说明为写入操做，针对不一样参数写入不一样类型的数据
     if(argc > 3) {
@@ -82,8 +82,8 @@ int main(int argc, char **argv) {
                 // read_result = *((unsigned long *) virt_addr);
                 break;
         }
-        // printf("Written 0x%x; readback 0x%x\n", writeval, read_result); 
-        printf("Written 0x%x\n", writeval); 
+        // printf("Written 0x%lx; readback 0x%lx\n", writeval, read_result); 
+        printf("Written 0x%lx\n", writeval); 
         fflush(stdout);
     }
 
